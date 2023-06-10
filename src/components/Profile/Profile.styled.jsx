@@ -1,15 +1,22 @@
 import styled from "@emotion/styled";
+import { theme } from "constants";
 
 export const ProfileCard = styled.div`
-margin: auto;
+margin-top: ${theme.sizing(3)};
+margin-left: auto;
+margin-right: auto;
 width: 300px;
 box-shadow: -5px 6px 11px 1px rgba(0,0,0,0.75);
 border-radius: 4px;
+transition: transform ${theme.animation.duration} ${theme.animation.timingFunction};
+&:hover, &:focus {
+    transform: scale(1.03);
+}
 `;
 export const Description = styled.div`
 text-align: center;
-padding-top: 30px;
-padding-bottom: 20px;
+padding-top: ${theme.sizing(7)};
+padding-bottom: ${theme.sizing(2)};
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -17,7 +24,7 @@ align-items: center;
 export const Avatar = styled.img`
 width: 150px;
 border-radius: 50%;
-padding-bottom: 20px;
+padding-bottom: ${theme.sizing(2)};
 `;
 export const Title = styled.p`
 font-weight: 600;
@@ -25,19 +32,19 @@ font-size: 18px;
 `;
 export const Info = styled.p`
 line-height: 1.2;
-color: #A5A5A5;
+color: ${theme.colors.infoText};
 `
 export const Stats = styled.ul`
 list-style: none;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: #C6D1D6;
+background-color: ${theme.colors.statsBg};
 border-radius: 0 0 4px 4px;
 `;
 export const Item = styled.li`
-flex-basis: calc((100% - 10px)/3);
-padding: 10px;
+flex-basis: calc((100% - ${theme.sizing(3)})/3);
+padding: ${theme.sizing(3)};
 border: 1px solid #9B9FA1;
 `;
 export const Label = styled.p`
